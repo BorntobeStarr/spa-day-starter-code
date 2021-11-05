@@ -19,26 +19,11 @@ public class UserController {
     }
 
     @PostMapping
-    public String processAddUserForm(Model model, @ModelAttribute @Valid User user, Errors errors, String verify) {
-        boolean passwordsMatch =   user.getPassword().equals(verify);
-
-        if(errors.hasErrors() || !passwordsMatch){
-            if(!passwordsMatch) {
-                model.addAttribute("error", "Passwords do not match");
-            }
+    public String processAddUserForm(@ModelAttribute @Valid User user, Errors errors) {
+        if(errors.hasErrors() ){
             return "user/add";
         }  else {
             return "user/index";
         }
-
-
-
-
-
-
-
-
     }
-
-
 }
