@@ -1,4 +1,9 @@
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
     background: linear-gradient(#89cff0, yellow, pink);
 }
 
@@ -8,7 +13,12 @@ div {
     padding: 10px;
     text-align: center;
     border: inset;
+
+}
+
+div:hover {
     box-shadow: 20px 10px 5px red;
+    transition: opacity 0.3s ease-in-out;
 }
 
 h1 {
@@ -29,3 +39,4 @@ table {
 .error {
     color: red;
 }
+

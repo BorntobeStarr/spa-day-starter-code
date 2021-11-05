@@ -2,22 +2,26 @@
 <html lang="en" xmlns:th = "http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+
     <title>Sign Up</title>
 </head>
 <body>
+<div class="container m-auto">
     <form method = 'post' th:action="@{/user}">
         <label>
-            Username:
-            <input type = 'text' th:field="${user.username}" th:value="${user.username}">
+            <input type = 'text' placeholder="Username" th:field="${user.username}" th:value="${user.username}">
+
             <p class="error" th:errors="${user.username}"></p>
         </label>
-
         <label>
             Email:
             <input th:field="${user.email}" th:value="${user.email}">
             <p class="error" th:errors="${user.email}"></p>
         </label>
+
 
         <label>
             Password:
@@ -35,6 +39,7 @@
 
         <input type = 'submit' value = 'Sign Up'>
     </form>
+</div>
 
 </body>
 </html>
